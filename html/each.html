@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/d3.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <script>
+        var persons = [
+            {
+                id: 1001,
+                name: "ZhangSan"
+            },
+            {
+                id: 1002,
+                name: "LiSi"
+            }    
+        ];
+
+        var p = d3.select("body").selectAll("p");
+
+        p.data(persons)
+            .each(function(d,i){
+                d.age = 20;
+            })
+            .text( function (d, i){
+                return d.id + " " + d.name + " " + d.age;
+            });
+    </script>
+    
+</body>
+</html>

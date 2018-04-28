@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/d3.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var dataset = [
+            {id: 1000, color: "red"},
+            {id: 1001, color: "green"},
+            {id: 1002, color: "blue"}
+        ];
+
+        var map = d3.map(dataset, function (d) {
+            return d.id;
+        });
+        
+        console.log(map.has(1001));
+        console.log(map.has(1003));
+
+        console.log(map.get(1001));
+
+
+    </script>
+    
+</body>
+</html>

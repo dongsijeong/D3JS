@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/d3.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+
+    <script>
+        var dataset = [3, 6, 9];
+
+        var p = d3.select("body").selectAll("p");
+        
+        var update = p.data(dataset);
+        var enter = update.enter();
+
+        update.text(
+            function(d){
+                return "update: " + d;
+            }
+        );
+        
+        enter.append("p")
+            .text(function(d){
+                return "enter: " + d;
+            });
+
+    </script>
+    
+</body>
+</html>
